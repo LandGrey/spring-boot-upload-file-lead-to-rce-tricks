@@ -50,10 +50,10 @@ docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.2
 ### 五. 漏洞利用条件
 
 - 可以获得 jdk 安装的 home 目录位置
-- (可收集常见 jdk 默认安装目录位置，然后使用字典枚举尝试)
+    - (可收集常见 jdk 默认安装目录位置，然后使用字典枚举尝试)
 
 - jdk 自带文件 `/jre/lib/***.jar` 没被 `Opened` 过
-- (以 charsets.jar 文件举例：程序代码中不使用 `Charset.forName("GBK")` 类似的调用，默认就不会加载到 charsets.jar 文件)
+    - (以 charsets.jar 文件举例：程序代码中不使用 `Charset.forName("GBK")` 类似的调用，默认就不会加载到 charsets.jar 文件)
 
 
 
