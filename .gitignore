@@ -17,7 +17,6 @@ charsets/.idea/
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -29,3 +28,4 @@ charsets/.idea/
 hs_err_pid*
 *.iml
 fatJarWriteFileRCE/src/main/java/code/landgrey/test/test.java
+charsets/src/charsets.jar
