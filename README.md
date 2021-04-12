@@ -1,31 +1,45 @@
 ## spring-boot-upload-file-lead-to-rce-tricks
 
 
-### docker 漏洞环境搭建：
+### 一. docker 漏洞环境搭建
 
 ```
 docker pull landgrey/spring-boot-fat-jar-write-file-rce:1.1
 docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.1
 ```
 
-**访问** http://127.0.0.1:18081/ 
+
+
+访问 http://127.0.0.1:18081/ 
 
 
 
-### 一些利用思考的文章：
+### 二. 相关文章
 
-[https://landgrey.me/blog/22/](https://landgrey.me/blog/22/)
+[Spring Boot Fat Jar 写文件漏洞到稳定 RCE 的探索](https://landgrey.me/blog/22/)
 
 
 
-### docker 漏洞环境的功能：
+### 三. 常见 JDK 目录收集
+
+欢迎补充👏～
+
+```
+/usr/lib/jvm/java-8-oracle/jre/lib/
+/usr/lib/jvm/java-1.8-openjdk/jre/lib/
+/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/
+```
+
+
+
+### 四. docker 漏洞环境的功能
 
 - 1. 文件上传功能 (默认上传到 /tmp/ 目录，可跳目录）
 - 2. 列目录功能     (列出 /tmp/ 目录下文件)
 
 
 
-### 漏洞利用条件：
+### 五. 漏洞利用条件
 
 - 1. 可以获得 jdk 安装的 home 目录位置
 - (可收集常见 jdk 默认安装目录位置，然后使用字典枚举尝试)
@@ -35,9 +49,9 @@ docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.1
 
 
 
-### 漏洞利用步骤：
+### 六. 漏洞利用步骤
 
-1. 选择上传文件 [charsets.jar](https://raw.githubusercontent.com/LandGrey/spring-boot-upload-file-lead-to-rce-tricks/master/release/charsets.jar)
+1. 选择上传文件 [charsets.jar](https://github.com/LandGrey/spring-boot-upload-file-lead-to-rce-tricks/raw/main/release/charsets.jar)
 
 2. 使用上传文件功能，上传时用 burpsuite 截住数据包，filename 修改为 `../../usr/lib/jvm/java-1.8-openjdk/jre/lib/charsets.jar`
 
@@ -49,7 +63,7 @@ docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.1
 
 
 
-### 漏洞利用场景：(5 个)
+### 七. 漏洞利用场景：(5 个)
 
 #### 1. fastjson 最新版(目前是 1.2.76)默认配置场景
 
