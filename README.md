@@ -10,7 +10,9 @@ docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.2
 
 
 
-完成后访问 http://127.0.0.1:18081/ 
+完成后访问 http://127.0.0.1:18081/ ，界面大概如下所示：
+
+![](https://github.com/LandGrey/spring-boot-upload-file-lead-to-rce-tricks/raw/main/images/docker.png)
 
 
 
