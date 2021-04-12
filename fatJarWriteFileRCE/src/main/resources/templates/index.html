@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<h1 style="text-align: center; left:50%;">SpringBoot FatJar 文件上传漏洞到 RCE</h1>
+
+</br>
+<h2>系统功能：</h2>
+<div>
+    <ul>
+        <li id="uploadIndex"></li>
+        <li id="listFile"></li>
+    </ul>
+</div>
+
+</br>
+<h2>源码及参考：</h2>
+<div>
+    <a target="_blank" href="https://github.com/LandGrey/spring-boot-upload-file-lead-to-rce-tricks">https://github.com/LandGrey/spring-boot-upload-file-lead-to-rce-tricks</a>
+</div>
+
+</br>
+<footer>
+    <h3 style="text-align: center; position:fixed; bottom:0px; left:50%;"><a target="_blank" href="https://landgrey.me/">Build By LandGrey</a></h3>
+</footer>
+
+<style>
+    a:hover,a:visited{color:red;}
+</style>
+
+<script type="text/javascript">
+    var url = window.self.location.toString();
+    var prefix = url.substring(0, url.indexOf('/', url.indexOf('://', 0) + 3));
+    document.getElementById("uploadIndex").innerHTML = '<a target="_blank" href="' + prefix + '/uploadIndex"' + '> 1. 文件上传功能&nbsp;&nbsp;(默认上传到 /tmp/ 目录) </a>\n';
+    document.getElementById("listFile").innerHTML = '<a target="_blank" href="' + prefix + '/listFile"' +'> 2. 列目录功能&nbsp;&nbsp;&nbsp;&nbsp;(列出 /tmp/ 目录下文件)</a>\n';
+
+</script>
+
+</body>
+</html>
