@@ -4,8 +4,8 @@
 ### 一. docker 漏洞环境搭建
 
 ```
-docker pull landgrey/spring-boot-fat-jar-write-file-rce:1.1
-docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.1
+docker pull landgrey/spring-boot-fat-jar-write-file-rce:1.2
+docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.2
 ```
 
 
