@@ -280,9 +280,15 @@ docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.2
 
 
 
-### 七. 漏洞利用场景：(5 个)
+### 七. 漏洞利用场景：(6 个)
 
 欢迎提 issue 补充👏～
+
+#### 0. spring 原生场景
+
+spring 框架自带的一条利用链，补充细节后公开，敬请期待。
+
+
 
 #### 1. fastjson 最新版(目前是 1.2.76)默认配置场景
 
